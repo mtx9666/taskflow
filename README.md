@@ -91,4 +91,12 @@ gitz/
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
+## License
 
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contact
+
+mtx9666 - [@mtx9666](https://github.com/mtx9666)
+
+Project Link: [https://github.com/mtx9666/gitz](https://github.com/mtx9666/gitz)
