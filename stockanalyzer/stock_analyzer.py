@@ -32,31 +32,30 @@ class StockAnalyzer:
             print("No data available. Please fetch data first.")
             return
         
-        # Moving Averages
+     
         self.data['SMA_20'] = self.data['Close'].rolling(window=20).mean()
         self.data['SMA_50'] = self.data['Close'].rolling(window=50).mean()
         self.data['EMA_12'] = self.data['Close'].ewm(span=12).mean()
         self.data['EMA_26'] = self.data['Close'].ewm(span=26).mean()
         
-        # RSI
+      
         delta = self.data['Close'].diff()
         gain = (delta.where(delta > 0, 0)).rolling(window=14).mean()
         loss = (-delta.where(delta < 0, 0)).rolling(window=14).mean()
         rs = gain / loss
         self.data['RSI'] = 100 - (100 / (1 + rs))
         
-        # MACD
         self.data['MACD'] = self.data['EMA_12'] - self.data['EMA_26']
         self.data['MACD_Signal'] = self.data['MACD'].ewm(span=9).mean()
         self.data['MACD_Histogram'] = self.data['MACD'] - self.data['MACD_Signal']
         
-        # Bollinger Bands
+      
         self.data['BB_Middle'] = self.data['Close'].rolling(window=20).mean()
         bb_std = self.data['Close'].rolling(window=20).std()
         self.data['BB_Upper'] = self.data['BB_Middle'] + (bb_std * 2)
         self.data['BB_Lower'] = self.data['BB_Middle'] - (bb_std * 2)
         
-        # Volume indicators
+       
         self.data['Volume_SMA'] = self.data['Volume'].rolling(window=20).mean()
         
         print("Technical indicators calculated successfully!")
