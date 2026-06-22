@@ -1,98 +1,84 @@
-# Gitz - Multi-Project Repository
+# TaskFlow — Full-Stack Dev Portfolio
 
-This repository contains multiple projects showcasing different technologies and use cases.
+Monorepo with two production-style projects: a **React + Node task manager** and a **Python stock analytics engine** with Jupyter demos.
+
+**Author:** Ali ([@mtx9666](https://github.com/mtx9666))
 
 ## Projects
 
-### 1. Stock Analyzer 
-A comprehensive stock market analysis tool built with Python and Jupyter notebooks.
+### 1. TaskFlow — Task management app
+
+Modern full-stack task manager with REST API and React UI.
 
 **Features:**
-- Technical analysis with moving averages, RSI, MACD, and Bollinger Bands
-- Performance metrics calculation (returns, volatility, Sharpe ratio)
-- Comparative analysis across multiple stocks
-- Risk-return visualization
-- Interactive Jupyter notebook demonstrations
+- Node.js / Express REST API
+- React frontend with component architecture
+- Task CRUD (create, read, update, delete)
+- Responsive UI with modern CSS
 
-**Location:** `./stockanalyzer/`
-
-### 2. TaskFlow 📋
-A modern task management application with full-stack architecture.
-
-**Features:**
-- Node.js/Express backend with MongoDB
-- React frontend with modern UI
-- User authentication and authorization
-- Task CRUD operations
-- Real-time updates
-
-**Tech Stack:**
-- Backend: Node.js, Express, MongoDB, JWT
-- Frontend: React, modern CSS
-- Database: MongoDB with Mongoose ODM
+**Tech:** Node.js · Express · React · MongoDB-ready structure
 
 **Location:** `./taskflow/`
 
-## Getting Started
-
-### Prerequisites
-- Node.js (v14 or higher)
-- Python 3.7+
-- MongoDB (for TaskFlow)
-- Git
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd gitz
-```
-
-2. For Stock Analyzer:
-```bash
-cd stockanalyzer
-pip install -r requirements.txt
-jupyter notebook
-```
-
-3. For TaskFlow:
 ```bash
 cd taskflow
 npm install
-cd client
-npm install
-cd ..
+cd client && npm install && cd ..
 npm run dev
 ```
 
-## Project Structure
+### 2. Stock Analyzer — Quantitative market analytics
+
+Python toolkit for technical analysis, risk metrics, and comparative stock research.
+
+**Features:**
+- Moving averages, RSI, MACD, Bollinger Bands
+- Returns, volatility, Sharpe ratio
+- Multi-ticker comparative analysis
+- Interactive Jupyter notebook walkthrough
+
+**Tech:** Python · Pandas · yfinance · Matplotlib · Jupyter
+
+**Location:** `./stockanalyzer/`
+
+```bash
+cd stockanalyzer
+pip install -r requirements.txt
+jupyter notebook notebooks/stock_analysis_demo.ipynb
+```
+
+## Project structure
 
 ```
-gitz/
-├── stockanalyzer/
-│   └── notebooks/
-│       └── stock_analysis_demo.ipynb
-├── taskflow/
+taskflow/
+├── taskflow/           # Node + React app
 │   ├── client/
-│   │   ├── public/
-│   │   └── src/
-│   │       └── components/
-│   └── package.json
-├── .gitignore
-└── README.md
+│   └── server.js
+├── stockanalyzer/      # Python analytics
+│   ├── stock_analyzer.py
+│   └── notebooks/
+├── README.md
+└── .gitignore
 ```
 
-## Contributing
+## Prerequisites
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+- Node.js 18+
+- Python 3.10+
+- MongoDB (optional, for TaskFlow persistence)
+- Git
 
-## Contact
+## What this demonstrates
 
-mtx9666 - [@mtx9666](https://github.com/mtx9666)
+| Skill | TaskFlow | Stock Analyzer |
+|-------|----------|----------------|
+| Full-stack architecture | ✓ | |
+| REST API design | ✓ | |
+| React component patterns | ✓ | |
+| Time-series analysis | | ✓ |
+| Financial metrics | | ✓ |
+| Data visualization | | ✓ |
 
-Project Link: [https://github.com/mtx9666/gitz](https://github.com/mtx9666/gitz)
+## License
+
+MIT
